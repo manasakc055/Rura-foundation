@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CXO Connect Pass Registration</title>
+  <style>
+    /* Reset & basic styling */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    h2 { margin-bottom: 20px; text-align: center;  margin-bottom: 50px;}
+    fieldset { margin-bottom: 20px; border: 1px solid #ddd; padding: 15px; border-radius: 5px; }
+    legend { font-weight: bold; }
+    .form-group { margin-bottom: 15px; }
+    label { display: block; margin-bottom: 5px; }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="url"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .inline-group { display: flex; gap: 20px; }
+    .inline-group .form-group { flex: 1; }
+    .checkbox-group, .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .checkbox-group label, .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    button {
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover { background: #0056b3; }
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .inline-group { flex-direction: column; }
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="container ">
+    <h2 >CXO Connect Pass Registration</h2>
+    <form id="registrationForm">
+      <!-- 1. Personal Details -->
+      <fieldset>
+        <legend>Personal Details</legend>
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" required>
+        </div>
+        <div class="form-group">
+          <label for="contactNumber">Contact Number</label>
+          <input type="tel" id="contactNumber" name="contactNumber" required>
+        </div>
+        <div class="form-group">
+          <label for="emailAddress">Email Address</label>
+          <input type="email" id="emailAddress" name="emailAddress" required>
+        </div>
+        <div class="form-group">
+          <label for="linkedinProfile">LinkedIn Profile (Optional)</label>
+          <input type="url" id="linkedinProfile" name="linkedinProfile">
+        </div>
+        <div class="form-group">
+          <label for="bloodGroup">Blood Group (Optional)</label>
+          <input type="text" id="bloodGroup" name="bloodGroup">
+        </div>
+      </fieldset>
+      
+      <!-- 2. Professional/Academic Details -->
+      <fieldset>
+        <legend>Professional/Academic Details</legend>
+        <div class="form-group">
+          <label for="professionalType">Are you an Entrepreneur, Business Professional, Student, or Working Professional?</label>
+          <select id="professionalType" name="professionalType" required>
+            <option value="">-- Select --</option>
+            <option value="entrepreneur">Entrepreneur</option>
+            <option value="businessProfessional">Business Professional</option>
+            <option value="student">Student</option>
+            <option value="workingProfessional">Working Professional</option>
+          </select>
+        </div>
+        
+        <!-- Entrepreneur Fields -->
+        <div id="entrepreneurFields" class="hidden">
+          <div class="form-group">
+            <label for="startupName">Startup Name</label>
+            <input type="text" id="startupName" name="startupName">
+          </div>
+          <div class="form-group">
+            <label for="startupIndustry">Industry</label>
+            <input type="text" id="startupIndustry" name="startupIndustry">
+          </div>
+          <div class="form-group">
+            <label for="startupWebsite">Website (if any)</label>
+            <input type="url" id="startupWebsite" name="startupWebsite">
+          </div>
+        </div>
+        
+        <!-- Business Professional Fields -->
+        <div id="businessProfessionalFields" class="hidden">
+          <div class="form-group">
+            <label for="businessName">Business Name</label>
+            <input type="text" id="businessName" name="businessName">
+          </div>
+          <div class="form-group">
+            <label for="businessType">Type of Business</label>
+            <input type="text" id="businessType" name="businessType">
+          </div>
+          <div class="form-group">
+            <label for="businessWebsite">Website (if any)</label>
+            <input type="url" id="businessWebsite" name="businessWebsite">
+          </div>
+        </div>
+        
+        <!-- Student Fields -->
+        <div id="studentFields" class="hidden">
+          <div class="form-group">
+            <label for="collegeName">College Name</label>
+            <input type="text" id="collegeName" name="collegeName">
+          </div>
+          <div class="form-group">
+            <label for="courseYear">Course &amp; Year</label>
+            <input type="text" id="courseYear" name="courseYear">
+          </div>
+        </div>
+        
+        <!-- Working Professional Fields -->
+        <div id="workingProfessionalFields" class="hidden">
+          <div class="form-group">
+            <label for="companyName">Company Name</label>
+            <input type="text" id="companyName" name="companyName">
+          </div>
+          <div class="form-group">
+            <label for="jobTitle">Job Title</label>
+            <input type="text" id="jobTitle" name="jobTitle">
+          </div>
+        </div>
+      </fieldset>
+      
+      <!-- 3. Reason for Attending -->
+      <fieldset>
+        <legend>Reason for Attending</legend>
+        <div class="form-group">
+          <label for="interestReason">Why are you interested in CXO Connect?</label>
+          <textarea id="interestReason" name="interestReason" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Areas of Interest (Select all that apply):</label>
+          <div class="checkbox-group">
+            <div>
+              <label>
+                <input type="checkbox" name="interests" value="Networking">
+                Networking
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" name="interests" value="Funding &amp; Investment">
+                Funding &amp; Investment
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" name="interests" value="Business Networking">
+                Business Networking
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" name="interests" value="Growth Strategies">
+                Growth Strategies
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" name="interests" value="Tech &amp; Innovation">
+                Tech &amp; Innovation
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" name="interests" value="Hiring &amp; Talent Acquisition">
+                Hiring &amp; Talent Acquisition
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" name="interests" value="Other" id="otherInterestCheckbox">
+                Other (Specify)
+              </label>
+            </div>
+          </div>
+          
+          <div class="form-group hidden" id="otherInterestField">
+            <input type="text" id="otherInterest" name="otherInterest" placeholder="Please specify other interests">
+          </div>
+        </div>
+      </fieldset>
+      
+      <!-- 4. Contribution to the Event -->
+      <fieldset>
+        <legend>Contribution to the Event</legend>
+        <div class="form-group">
+          <label>Would you like to be a speaker, panelist, or share your startup journey?</label>
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="contribution" value="yes" required>
+              Yes
+            </label>
+            <label>
+              <input type="radio" name="contribution" value="no" required>
+              No
+            </label>
+          </div>
+        </div>
+        <div class="form-group hidden" id="contributionDetails">
+          <label for="contributionTopic">If yes, briefly describe your topic:</label>
+          <textarea id="contributionTopic" name="contributionTopic" rows="3"></textarea>
+        </div>
+        <div class="form-group hidden" id="mentorField">
+          <label>Would you like to mentor a startup?</label>
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="mentor" value="yes">
+              Yes
+            </label>
+            <label>
+              <input type="radio" name="mentor" value="no">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+      
+      <!-- 5. Pass Details & Preferences -->
+      <fieldset>
+        <legend>Pass Details &amp; Preferences</legend>
+        <div class="form-group">
+          <label>Preferred Mode of Attendance:</label>
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="attendanceMode" value="inPerson" checked>
+              In-Person
+            </label>
+          </div>
+        </div>
+      </fieldset>
+      
+      <!-- 6. Payment & Confirmation -->
+      <fieldset>
+        <legend>Payment &amp; Confirmation</legend>
+        <div class="form-group">
+          <label for="paymentMethod">Payment Method</label>
+          <select id="paymentMethod" name="paymentMethod" required>
+            <option value="">-- Select Payment Method --</option>
+            <option value="upi">UPI</option>
+            <option value="netBanking">Net Banking</option>
+            <option value="card">Credit/Debit Card</option>
+            <option value="payAtVenue">Pay at Venue</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="paymentReceipt">Upload Payment Receipt (if applicable)</label>
+          <input type="file" id="paymentReceipt" name="paymentReceipt" accept="image/*,application/pdf">
+        </div>
+      </fieldset>
+      
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Toggle Professional/Academic fields based on selection
+      const professionalTypeSelect = document.getElementById('professionalType');
+      const entrepreneurFields = document.getElementById('entrepreneurFields');
+      const businessProfessionalFields = document.getElementById('businessProfessionalFields');
+      const studentFields = document.getElementById('studentFields');
+      const workingProfessionalFields = document.getElementById('workingProfessionalFields');
+      const mentorField = document.getElementById('mentorField');
+      
+      professionalTypeSelect.addEventListener('change', function() {
+        const value = this.value;
+        // Hide all optional sections first
+        entrepreneurFields.classList.add('hidden');
+        businessProfessionalFields.classList.add('hidden');
+        studentFields.classList.add('hidden');
+        workingProfessionalFields.classList.add('hidden');
+        mentorField.classList.add('hidden');
+        
+        if (value === 'entrepreneur') {
+          entrepreneurFields.classList.remove('hidden');
+          mentorField.classList.remove('hidden');
+        } else if (value === 'businessProfessional') {
+          businessProfessionalFields.classList.remove('hidden');
+        } else if (value === 'student') {
+          studentFields.classList.remove('hidden');
+        } else if (value === 'workingProfessional') {
+          workingProfessionalFields.classList.remove('hidden');
+        }
+      });
+      
+      // Toggle "Other" interest field based on checkbox
+      const otherInterestCheckbox = document.getElementById('otherInterestCheckbox');
+      const otherInterestField = document.getElementById('otherInterestField');
+      otherInterestCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+          otherInterestField.classList.remove('hidden');
+        } else {
+          otherInterestField.classList.add('hidden');
+        }
+      });
+      
+      // Toggle contribution topic field based on radio selection
+      const contributionRadios = document.getElementsByName('contribution');
+      const contributionDetails = document.getElementById('contributionDetails');
+      Array.from(contributionRadios).forEach(function(radio) {
+        radio.addEventListener('change', function() {
+          if (this.value === 'yes') {
+            contributionDetails.classList.remove('hidden');
+          } else {
+            contributionDetails.classList.add('hidden');
+          }
+        });
+      });
+      
+      // Handle form submission (for demo purposes)
+      const form = document.getElementById('registrationForm');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Form submitted successfully!');
+        // Add your form processing logic here
+      });
+    });
+  </script>
+</body>
+</html>
+// Replace these with your actual Supabase details
+const supabaseUrl = 'https://owzaetzxjsspqkwcucqg.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im93emFldHp4anNzcHFrd2N1Y3FnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA0MTc2MjcsImV4cCI6MjA1NTk5MzYyN30.fK9JpZ5XaBh2d0YZGgkcY4MJhZn9RQCujTp4G0J2hW8';
+const supabaseClient = createClient(supabaseUrl, supabaseKey);
+// Replace these with your actual Supabase details
+const supabaseUrl = 'https://owzaetzxjsspqkwcucqg.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im93emFldHp4anNzcHFrd2N1Y3FnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA0MTc2MjcsImV4cCI6MjA1NTk5MzYyN30.fK9JpZ5XaBh2d0YZGgkcY4MJhZn9RQCujTp4G0J2hW8';
+const supabaseClient = createClient(supabaseUrl, supabaseKey);
+
