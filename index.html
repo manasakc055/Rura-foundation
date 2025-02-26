@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.core.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.theme.min.css" rel="stylesheet">
-    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-BLACKtext-black.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/glide.min.js"></script>
-    <script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
-    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000" data-border-radius="small"></script>
+    <script
+        src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    
 </head>
-<body class="font-sans bg-gray-50">
+
+<body class="font-sans">
     <header class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <nav class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
@@ -27,17 +29,17 @@
     
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index1.html" class="text-gray-700 hover:text-custom">Home</a>
-                    <a href="about-us.html" class="text-gray-700 hover:text-custom">About Us</a>
-                    <!-- <a href="initiatives" class="text-gray-700 hover:text-custom">Initiatives</a> -->
-                    <a href="cxo.html" class="text-gray-700 hover:text-custom">Cxo connect</a>
-                    <a href="contact.html" class="text-gray-700 hover:text-custom">Contact</a>
-                    <button class="!rounded-button bg-black text-white px-6 py-2 hover:bg-custom/90">Donate</button>
+                    <a href="index1.html" class="text-gray-700 hover:text-black">Home</a>
+                    <a href="about-us.html" class="text-gray-700 hover:text-black">About Us</a>
+                    <!-- <a href="initiatives" class="text-gray-700 hover:text-black">Initiatives</a> -->
+                    <a href="cxo.html" class="text-gray-700 hover:text-black">Cxo connect</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-black">Contact</a>
+                    <button class="!rounded-button rounded-md bg-black text-white px-6 py-2 hover:bg-black/90">Donate</button>
                 </div>
     
                 <!-- Mobile Menu Button (Visible on smaller screens) -->
                 <div class="md:hidden flex items-center">
-                    <button id="menu-button" class="text-gray-700 hover:text-custom">
+                    <button id="menu-button" class="text-gray-700 hover:text-black">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -49,30 +51,34 @@
         <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="md:hidden hidden bg-white shadow-md">
             <div class="px-4 py-2">
-                <a href="index1.html" class="block text-gray-700 hover:text-custom py-2">Home</a>
-                <a href="about-us.html" class="block text-gray-700 hover:text-custom py-2">About Us</a>
-                <!-- <a href="initiatives" class="block text-gray-700 hover:text-custom py-2">Initiatives</a> -->
-                <a href="cxo.html" class="block text-gray-700 hover:text-custom py-2">Cxo connect</a>
-                <a href="contact.html" class="block text-gray-700 hover:text-custom py-2">Contact</a>
-                <button class="bg-black text-white px-6 py-2 w-full mt-2 hover:bg-custom/90 rounded-md">Donate</button>
+                <a href="index1.html" class="block text-gray-700 hover:text-black py-2">Home</a>
+                <a href="about-us.html" class="block text-gray-700 hover:text-black py-2">About Us</a>
+                <!-- <a href="initiatives" class="block text-gray-700 hover:text-black py-2">Initiatives</a> -->
+                <a href="cxo.html" class="block text-gray-700 hover:text-black py-2">Cxo connect</a>
+                <a href="contact.html" class="block text-gray-700 hover:text-black py-2">Contact</a>
+                <button class="!rounded-button rounded-md bg-black text-black text-white px-6 py-2 w-full mt-2 hover:bg-black text-black/90">Donate</button>
             </div>
         </div>
     </header>
+    
+
     <main>
-        <section class="relative h-[80vh] overflow-hidden">
+        <section class="relative h-[100vh] overflow-hidden">
             <div class="glide">
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
                         <li class="glide__slide relative">
-                            <img src="./assets/hero.png" class="w-full h-[80vh] object-cover" alt="Impact">
+                            <img src="./assets/hero-main.png" class="w-full h-[100vh] object-cover" alt="Impact">
                             <div class="absolute inset-0 bg-black/40"></div>
                             <div class="absolute inset-0 flex items-center justify-center">
                                 <div class="text-center text-white max-w-4xl px-4">
                                     <h1 class="text-5xl font-bold mb-6">Transforming Lives Through Innovation</h1>
                                     <p class="text-xl mb-8">Join us in creating sustainable impact through entrepreneurship, education, and environmental initiatives.</p>
                                     <div class="flex justify-center gap-4">
-                                        <button class="!rounded-button bg-custom text-white px-8 py-3 text-lg hover:bg-custom/90">Get Involved</button>
-                                        <button class="!rounded-button bg-white text-gray-900 px-8 py-3 text-lg hover:bg-gray-100">Our Programs</button>
+                                        <a href="form2.html"> 
+                                            <button class="!rounded-button rounded-md bg-white text-black px-8 py-3 text-lg hover:bg-white text-black/90">Get Involved</button>
+                                        </a>
+                                        <!-- <button class="!rounded-button bg-white text-gray-900 px-8 py-3 text-lg hover:bg-gray-100">Our Programs</button> -->
                                     </div>
                                 </div>
                             </div>
@@ -86,170 +92,148 @@
                 </div>
             </div>
         </section>
-
-        <section class="py-20 bg-white">
-            <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-                    <div class="p-6">
-                        <h3 class="text-4xl font-bold text-custom mb-2">50K+</h3>
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-BLACKtext-black/10 mb-4">
+                            <i class="fas fa-users text-2xl text-black"></i>
+                        </div>
+                        <h3 class="text-4xl font-bold text-gray-900 mb-2">50K+</h3>
                         <p class="text-gray-600">Lives Impacted</p>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-4xl font-bold text-custom mb-2">100K+</h3>
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-BLACKtext-black/10 mb-4">
+                            <i class="fas fa-tree text-2xl text-black"></i>
+                        </div>
+                        <h3 class="text-4xl font-bold text-gray-900 mb-2">100K+</h3>
                         <p class="text-gray-600">Trees Planted</p>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-4xl font-bold text-custom mb-2">25+</h3>
-                        <p class="text-gray-600">Active Programs</p>
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-BLACKtext-black/10 mb-4">
+                            <i class="fas fa-chalkboard-teacher text-2xl text-black"></i>
+                        </div>
+                        <h3 class="text-4xl font-bold text-gray-900 mb-2">1000+</h3>
+                        <p class="text-gray-600">Programs Conducted</p>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-4xl font-bold text-custom mb-2">200+</h3>
-                        <p class="text-gray-600">Community Partners</p>
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-BLACKtext-black/10 mb-4">
+                            <i class="fas fa-hands-helping text-2xl text-black"></i>
+                        </div>
+                        <h3 class="text-4xl font-bold text-gray-900 mb-2">5K+</h3>
+                        <p class="text-gray-600">Active Volunteers</p>
                     </div>
                 </div>
             </div>
         </section>
+        
+      
 
-        <section class="py-20 bg-gray-50">
-            <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Core Initiatives</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">Empowering communities through comprehensive programs focused on sustainable development and personal growth.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                    <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition">
-                        <div class="text-custom mb-4">
-                            <i class="fas fa-lightbulb text-3xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Entrepreneurship Development</h3>
-                        <p class="text-gray-600 mb-4">Supporting innovative startups and fostering entrepreneurial skills.</p>
-                        <a href="#" class="text-custom hover:text-custom/90 font-medium">Learn More →</a>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition">
-                        <div class="text-custom mb-4">
-                            <i class="fas fa-graduation-cap text-3xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Skill Development</h3>
-                        <p class="text-gray-600 mb-4">Providing practical training for career advancement and growth.</p>
-                        <a href="#" class="text-custom hover:text-custom/90 font-medium">Learn More →</a>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition">
-                        <div class="text-custom mb-4">
-                            <i class="fas fa-leaf text-3xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Climate Action</h3>
-                        <p class="text-gray-600 mb-4">Leading initiatives for environmental conservation and sustainability.</p>
-                        <a href="#" class="text-custom hover:text-custom/90 font-medium">Learn More →</a>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition">
-                        <div class="text-custom mb-4">
-                            <i class="fas fa-book text-3xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Education</h3>
-                        <p class="text-gray-600 mb-4">Facilitating access to quality education and learning resources.</p>
-                        <a href="#" class="text-custom hover:text-custom/90 font-medium">Learn More →</a>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition">
-                        <div class="text-custom mb-4">
-                            <i class="fas fa-heart text-3xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Psychological Education</h3>
-                        <p class="text-gray-600 mb-4">Supporting mental health through counseling and education.</p>
-                        <a href="#" class="text-custom hover:text-custom/90 font-medium">Learn More →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-20 bg-white">
-            <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Success Stories</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">Real stories of transformation and impact from our community.</p>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Initiatives</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Discover how we're making a difference through
+                        our comprehensive programs focused on empowerment and sustainability</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-gray-50 rounded-lg p-8">
-                        <div class="mb-6">
-                            <img src="https://creatie.ai/ai/api/search-image?query=A professional headshot of a confident young entrepreneur in business attire, with a warm smile and natural lighting, against a simple neutral background&width=400&height=400&orientation=squarish&flag=051b4a03-820d-49af-8375-8643525d1303" class="w-20 h-20 rounded-full mx-auto mb-4" alt="Sarah Johnson">
-                            <p class="text-gray-600 italic mb-4">"RURA Foundation's entrepreneurship program gave me the skills and confidence to start my sustainable fashion business. Now I employ 15 people from my community."</p>
-                            <h4 class="font-semibold">Sarah Johnson</h4>
-                            <p class="text-sm text-gray-500">Founder, EcoStyle Fashion</p>
+                    <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"> <img
+                            src="./assets/index-p1.png"
+                            class="w-full h-48 object-cover rounded-t-lg" alt="Entrepreneurship">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Entrepreneurship Development</h3>
+                            <p class="text-gray-600 mb-4">Supporting aspiring entrepreneurs with mentorship, resources,
+                                and funding opportunities</p>
+                            <a href="#" class="text-black font-medium hover:text-black/90">Learn More <i
+                                    class="fas fa-arrow-right ml-2"></i></a>
                         </div>
                     </div>
-                    <div class="bg-gray-50 rounded-lg p-8">
-                        <div class="mb-6">
-                            <img src="https://creatie.ai/ai/api/search-image?query=A professional headshot of a middle-aged male teacher in casual professional attire, with glasses and a friendly expression, against a simple neutral background&width=400&height=400&orientation=squarish&flag=8e6cd073-70b8-4f1b-b930-acd81f2bd8a0" class="w-20 h-20 rounded-full mx-auto mb-4" alt="David Chen">
-                            <p class="text-gray-600 italic mb-4">"The digital literacy program helped me transition from traditional teaching to online education. I've now reached students across three continents."</p>
-                            <h4 class="font-semibold">David Chen</h4>
-                            <p class="text-sm text-gray-500">Educational Innovator</p>
+                    <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"> <img
+                            src="./assets/index-p2.png"
+                            class="w-full h-48 object-cover rounded-t-lg" alt="Skills">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Skill Development</h3>
+                            <p class="text-gray-600 mb-4">Providing practical training in digital literacy, vocational
+                                skills, and professional development</p>
+                            <a href="#" class="text-black font-medium hover:text-black/90">Learn More <i
+                                    class="fas fa-arrow-right ml-2"></i></a>
                         </div>
                     </div>
-                    <div class="bg-gray-50 rounded-lg p-8">
-                        <div class="mb-6">
-                            <img src="https://creatie.ai/ai/api/search-image?query=A professional headshot of a young female environmental activist in casual attire, with natural makeup and an enthusiastic expression, against a simple neutral background&width=400&height=400&orientation=squarish&flag=53b18fe6-fec0-4853-a40d-18bf63290409" class="w-20 h-20 rounded-full mx-auto mb-4" alt="Maya Patel">
-                            <p class="text-gray-600 italic mb-4">"Through RURA's climate action initiative, we've planted over 5,000 trees in our region and established a community recycling program."</p>
-                            <h4 class="font-semibold">Maya Patel</h4>
-                            <p class="text-sm text-gray-500">Environmental Advocate</p>
+                    <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"> <img
+                        src="./assets/index-p3.png"
+                        class="w-full h-48 object-cover rounded-t-lg" alt="Climate">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Climate Action</h3>
+                            <p class="text-gray-600 mb-4">Leading initiatives in environmental conservation and
+                                sustainable practices</p>
+                            <a href="#" class="text-black font-medium hover:text-black/90">Learn More <i
+                                    class="fas fa-arrow-right ml-2"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-20 bg-custom text-white">
-            <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="text-center p-6">
-                        <i class="fas fa-hands-helping text-4xl mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-3">Volunteer</h3>
-                        <p class="mb-4">Join our community of dedicated volunteers making a difference.</p>
-                        <button class="!rounded-button bg-white text-custom px-6 py-2 hover:bg-gray-100">Join Now</button>
+        <section class="py-20 bg-black text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6">Make a Difference Today</h2>
+                        <p class="text-lg mb-8">Join our community of changemakers and help us create lasting impact.
+                            Whether through volunteering, donations, or partnerships, your support matters.</p> <button
+                            class="!rounded-button rounded-md bg-white text-black px-8 py-3 font-medium hover:bg-gray-100 transition-colors">Join
+                            Us</button>
                     </div>
-                    <div class="text-center p-6">
-                        <i class="fas fa-handshake text-4xl mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-3">Partner</h3>
-                        <p class="mb-4">Collaborate with us to create lasting social impact.</p>
-                        <button class="!rounded-button bg-white text-custom px-6 py-2 hover:bg-gray-100">Partner With Us</button>
-                    </div>
-                    <div class="text-center p-6">
-                        <i class="fas fa-gift text-4xl mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-3">Donate</h3>
-                        <p class="mb-4">Support our initiatives through financial contributions.</p>
-                        <button class="!rounded-button bg-white text-custom px-6 py-2 hover:bg-gray-100">Donate Now</button>
+                    <div class="relative">
+                        <img src="./assets/index-p4.png"
+
+                            class="w-full rounded-lg" alt="Community">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-20 bg-white">
-            <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-bold text-gray-900 mb-4">Latest Updates</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">Stay informed about our recent activities and upcoming events.</p>
+                    <p class="text-xl text-gray-600">Stay informed about our latest activities and success stories</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-gray-50 rounded-lg overflow-hidden">
-                        <img src="https://creatie.ai/ai/api/search-image?query=A group of diverse students engaged in a coding workshop, with laptops and modern technology visible, in a well-lit classroom setting&width=600&height=400&orientation=landscape&flag=695dca1c-d394-4e1c-85f9-90601fad6a16" class="w-full h-48 object-cover" alt="Digital Workshop">
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <img   src="./assets/index-p5.png"
+
+                            class="w-full h-48 object-cover rounded-t-lg" alt="Workshop">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Digital Skills Workshop</h3>
-                            <p class="text-gray-600 mb-4">Free coding bootcamp for underprivileged youth starting next month.</p>
-                            <a href="#" class="text-custom hover:text-custom/90 font-medium">Read More →</a>
+                            <div class="text-black text-sm font-medium mb-2">News</div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Digital Literacy Workshop Success</h3>
+                            <p class="text-gray-600 mb-4">Over 100 participants completed our latest digital skills
+                                training program...</p> <a href="#"
+                                class="text-black font-medium hover:text-black/90">Read More <i
+                                    class="fas fa-arrow-right ml-2"></i></a>
                         </div>
                     </div>
-                    <div class="bg-gray-50 rounded-lg overflow-hidden">
-                        <img src="https://creatie.ai/ai/api/search-image?query=A community tree planting event with volunteers of different ages working together, surrounded by saplings and gardening tools&width=600&height=400&orientation=landscape&flag=0387998b-c853-4b94-b6f9-7fc4e2d72f28" class="w-full h-48 object-cover" alt="Tree Planting">
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <img src="./assets/index-p6.png"
+                            class="w-full h-48 object-cover rounded-t-lg" alt="Event">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Green Initiative Launch</h3>
-                            <p class="text-gray-600 mb-4">Join our upcoming tree plantation drive this weekend.</p>
-                            <a href="#" class="text-custom hover:text-custom/90 font-medium">Read More →</a>
+                            <div class="text-black text-sm font-medium mb-2">Upcoming Event</div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Annual Tree Plantation Drive</h3>
+                            <p class="text-gray-600 mb-4">Join us this weekend as we aim to plant 1000 trees in the
+                                city...</p> <a href="#" class="text-black font-medium hover:text-black/90">Read More
+                                <i class="fas fa-arrow-right ml-2"></i></a>
                         </div>
                     </div>
-                    <div class="bg-gray-50 rounded-lg overflow-hidden">
-                        <img src="https://creatie.ai/ai/api/search-image?query=A professional networking event with entrepreneurs and mentors engaging in discussions, in a modern conference setting&width=600&height=400&orientation=landscape&flag=db0fb303-48d4-48c7-89b5-7c52c85fe838" class="w-full h-48 object-cover" alt="Entrepreneurship Summit">
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <img src="./assets/index-p7.png"
+                            class="w-full h-48 object-cover rounded-t-lg" alt="Success">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Entrepreneurship Summit</h3>
-                            <p class="text-gray-600 mb-4">Annual gathering of innovators and industry leaders.</p>
-                            <a href="#" class="text-custom hover:text-custom/90 font-medium">Read More →</a>
+                            <div class="text-black text-sm font-medium mb-2">Success Story</div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">From Trainee to Tech Entrepreneur</h3>
+                            <p class="text-gray-600 mb-4">Maria's journey from our skill development program to
+                                launching her startup...</p> <a href="#"
+                                class="text-black font-medium hover:text-black/90">Read More <i
+                                    class="fas fa-arrow-right ml-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -257,58 +241,108 @@
         </section>
 
         <section class="py-20 bg-gray-50">
-            <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="max-w-2xl mx-auto text-center">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Stay Connected</h2>
-                    <p class="text-gray-600 mb-8">Subscribe to our newsletter for updates on our initiatives and impact stories.</p>
-                    <form class="flex gap-4 justify-center">
-                        <input type="email" placeholder="Enter your email" class="!rounded-button flex-1 max-w-md px-4 py-2 border border-gray-300 focus:border-custom focus:ring-custom">
-                        <button type="submit" class="!rounded-button bg-custom text-white px-6 py-2 hover:bg-custom/90">Subscribe</button>
-                    </form>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6">Support Our Mission</h2>
+                        <p class="text-gray-600 mb-8">Your contribution helps us continue our work in transforming lives
+                            and communities. Choose your preferred way to donate:</p>
+                        <div class="space-y-4">
+                            <button
+                                class="!rounded-button rounded-md w-full bg-black text-white px-6 py-3 font-medium hover:bg-BLACKtext-black/90 transition-colors">One-time
+                                Donation</button>
+                            <button
+                                class="!rounded-button rounded-md w-full bg-white border border-BLACKtext-black text-black px-6 py-3 font-medium hover:bg-gray-50 transition-colors">Monthly
+                                Giving</button>
+                        </div>
+                        <div class="mt-6 flex items-center justify-center space-x-4">
+                            <i class="fab fa-cc-visa text-3xl text-gray-400"></i>
+                            <i class="fab fa-cc-mastercard text-3xl text-gray-400"></i>
+                            <i class="fab fa-cc-paypal text-3xl text-gray-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6">Newsletter Signup</h2>
+                        <p class="text-gray-600 mb-8">Stay updated with our latest news and upcoming events.</p>
+                        <form class="space-y-4"> <input type="email" placeholder="Enter your email"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-BLACKtext-black focus:ring-1 focus:ring-BLACKtext-black">
+                            <button type="submit"
+                                class="!rounded-button rounded-md w-full bg-black text-white px-6 py-3 font-medium hover:bg-black/90 transition-colors">Subscribe</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-900 text-gray-300 py-12">
-        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <!-- <img src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png" alt="RURA Foundation" class="h-8 mb-4"> -->
-                    <p class="text-sm">Transforming lives through innovation and sustainability.</p>
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Footer Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Logo and Description -->
+                <div> 
+                    <!-- <img src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png" alt="RURA Foundation"
+                        class="h-8 mb-6"> -->
+                    <h1 class=" font-bold">RURA Foundation</h1>
+                    <p class="text-gray-400">Transforming lives through innovation and sustainability</p>
                 </div>
+                
+                <!-- Quick Links -->
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-white">About Us</a></li>
-                        <li><a href="#" class="hover:text-white">Our Programs</a></li>
-                        <li><a href="#" class="hover:text-white">Get Involved</a></li>
-                        <li><a href="#" class="hover:text-white">Contact</a></li>
+                        <li><a href="index1.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="about-us.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="cxo.html" class="text-gray-400 hover:text-white">Cxo Connect</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
                     </ul>
                 </div>
+    
+                <!-- Contact Info -->
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Contact Us</h4>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
                     <ul class="space-y-2">
-                        <li><i class="fas fa-map-marker-alt mr-2"></i> 123 Impact Street, Global City</li>
-                        <li><i class="fas fa-phone mr-2"></i> +1 234 567 890</li>
-                        <li><i class="fas fa-envelope mr-2"></i> info@rurafoundation.org</li>
+                        <li class="text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i>123 Impact Street, City</li>
+                        <li class="text-gray-400"><i class="fas fa-phone mr-2"></i>+91 9492859634</li>
+                        <li class="text-gray-400"><i class="fas fa-envelope mr-2"></i>info@rurafoundation.org</li>
                     </ul>
                 </div>
+    
+                <!-- Social Media Links -->
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Follow Us</h4>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
                     <div class="flex space-x-4">
-                        <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="hover:text-white"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="hover:text-white"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
-                <p>© 2024 RURA Foundation. All rights reserved.</p>
+    
+            <!-- Footer Bottom Section -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">© 2024 RURA Foundation. All rights reserved.</p>
+                    <div class="flex space-x-4 mt-4 md:mt-0"> 
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
+<!--     
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-4"> <button
+            class="!rounded-button rounded-md w-12 h-12 bg-black text-white shadow-lg hover:bg-black/90 transition-colors flex items-center justify-center">
+            <i class="fas fa-comments"></i>
+        </button>
+        <button
+            class="!rounded-button  w-12 h-12 bg-gray-900 text-white shadow-lg hover:bg-gray-800 transition-colors flex items-center justify-center"
+            id="backToTop"> <i class="fas fa-arrow-up"></i>
+        </button>
+    </div> -->
 
     <script>
         new Glide('.glide', {
@@ -318,6 +352,22 @@
             gap: 0,
             animationDuration: 1000
         }).mount();
+
+        document.getElementById('backToTop').addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
+    <script>
+        // Select the menu button and mobile menu elements
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+    
+        // Add a click event listener to toggle the mobile menu visibility
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+    
 </body>
+
 </html>
