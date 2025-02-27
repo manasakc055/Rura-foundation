@@ -1,99 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CXO Connect Pass Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CXO Connect Pass Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.core.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.theme.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/glide.min.js"></script>
+    <script
+        src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    
+  
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
   <style>
-    /* Reset & basic styling */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    /* Darkened background image using a pseudo-element */
+    body {
+      position: relative;
+      min-height: 100vh;
+      margin: 0;
+      padding-top: 60px;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('./assets/form-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      filter: brightness(0.5);
+      z-index: -1;
+    }
+    /* Semi-transparent container for the form */
     .container {
-      max-width: 800px;
-      margin: auto;
-      background: #fff;
+      background-color: rgba(255, 255, 255, 0.9);
       padding: 20px;
       border-radius: 8px;
     }
-    h2 { margin-bottom: 20px; text-align: center;  margin-bottom: 50px;}
-    fieldset { margin-bottom: 20px; border: 1px solid #ddd; padding: 15px; border-radius: 5px; }
-    legend { font-weight: bold; }
-    .form-group { margin-bottom: 15px; }
-    label { display: block; margin-bottom: 5px; }
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="url"],
-    textarea,
-    select {
+    .hidden {
+      display: none;
+    }
+       /* Navbar styling */
+       header {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      z-index: 50; /* Ensure navbar stays on top */
+      background-color: rgba(255, 255, 255, 0.95); /* Make the navbar slightly transparent */
+      backdrop-filter: blur(10px); /* Add some blur effect */
+      border-bottom: 1px solid #ddd; /* Optional: add a bottom border for separation */
     }
-    .inline-group { display: flex; gap: 20px; }
-    .inline-group .form-group { flex: 1; }
-    .checkbox-group, .radio-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .checkbox-group label, .radio-group label {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-    button {
-      background: #007BFF;
-      color: #fff;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover { background: #0056b3; }
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-      .inline-group { flex-direction: column; }
-    }
-    .hidden { display: none; }
   </style>
 </head>
 <body>
-  <div class="container ">
-    <h2 >CXO Connect Pass Registration</h2>
+  <header class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <nav class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <!-- Logo -->
+            <div class="flex">
+                <a href="/" class="flex items-center">
+                    <span class="ml-3 text-xl font-semibold text-gray-900">RURA Foundation</span>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index1.html" class="text-gray-700 hover:text-black">Home</a>
+                <a href="about-us.html" class="text-gray-700 hover:text-black">About Us</a>
+                <!-- <a href="initiatives" class="text-gray-700 hover:text-black">Initiatives</a> -->
+                <a href="cxo.html" class="text-gray-700 hover:text-black">Cxo connect</a>
+                <a href="contact.html" class="text-gray-700 hover:text-black">Contact</a>
+                <!-- <button class="!rounded-button rounded-md bg-black text-white px-6 py-2 hover:bg-black/90">Donate</button> -->
+            </div>
+
+            <!-- Mobile Menu Button (Visible on smaller screens) -->
+            <div class="md:hidden flex items-center">
+                <button id="menu-button" class="text-gray-700 hover:text-black">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-md">
+        <div class="px-4 py-2">
+            <a href="index1.html" class="block text-gray-700 hover:text-black py-2">Home</a>
+            <a href="about-us.html" class="block text-gray-700 hover:text-black py-2">About Us</a>
+            <!-- <a href="initiatives" class="block text-gray-700 hover:text-black py-2">Initiatives</a> -->
+            <a href="cxo.html" class="block text-gray-700 hover:text-black py-2">Cxo connect</a>
+            <a href="contact.html" class="block text-gray-700 hover:text-black py-2">Contact</a>
+            <!-- <button class="!rounded-button rounded-md bg-black text-black text-white px-6 py-2 w-full mt-2 hover:bg-black text-black/90">Donate</button> -->
+        </div>
+    </div>
+</header>
+  <div class="container my-5">
+    <h2 class="text-center mb-4">CXO Connect Pass Registration</h2>
     <form id="registrationForm">
       <!-- 1. Personal Details -->
-      <fieldset>
-        <legend>Personal Details</legend>
-        <div class="form-group">
-          <label for="fullName">Full Name</label>
-          <input type="text" id="fullName" name="fullName" required>
+      <fieldset class="border p-3 mb-4 rounded">
+        <legend class="w-auto px-2">Personal Details</legend>
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input type="text" id="fullName" name="fullName" class="form-control" required />
         </div>
-        <div class="form-group">
-          <label for="contactNumber">Contact Number</label>
-          <input type="tel" id="contactNumber" name="contactNumber" required>
+        <div class="mb-3">
+          <label for="contactNumber" class="form-label">Contact Number</label>
+          <input type="tel" id="contactNumber" name="contactNumber" class="form-control" required />
         </div>
-        <div class="form-group">
-          <label for="emailAddress">Email Address</label>
-          <input type="email" id="emailAddress" name="emailAddress" required>
+        <div class="mb-3">
+          <label for="emailAddress" class="form-label">Email Address</label>
+          <input type="email" id="emailAddress" name="emailAddress" class="form-control" required />
         </div>
-        <div class="form-group">
-          <label for="linkedinProfile">LinkedIn Profile (Optional)</label>
-          <input type="url" id="linkedinProfile" name="linkedinProfile">
+        <div class="mb-3">
+          <label for="linkedinProfile" class="form-label">LinkedIn Profile (Optional)</label>
+          <input type="url" id="linkedinProfile" name="linkedinProfile" class="form-control" />
         </div>
-        <div class="form-group">
-          <label for="bloodGroup">Blood Group (Optional)</label>
-          <input type="text" id="bloodGroup" name="bloodGroup">
+        <div class="mb-3">
+          <label for="bloodGroup" class="form-label">Blood Group (Optional)</label>
+          <input type="text" id="bloodGroup" name="bloodGroup" class="form-control" />
         </div>
       </fieldset>
-      
+
       <!-- 2. Professional/Academic Details -->
-      <fieldset>
-        <legend>Professional/Academic Details</legend>
-        <div class="form-group">
-          <label for="professionalType">Are you an Entrepreneur, Business Professional, Student, or Working Professional?</label>
-          <select id="professionalType" name="professionalType" required>
+      <fieldset class="border p-3 mb-4 rounded">
+        <legend class="w-auto px-2">Professional/Academic Details</legend>
+        <div class="mb-3">
+          <label for="professionalType" class="form-label">Are you an Entrepreneur, Business Professional, Student, or Working Professional?</label>
+          <select id="professionalType" name="professionalType" class="form-select" required>
             <option value="">-- Select --</option>
             <option value="entrepreneur">Entrepreneur</option>
             <option value="businessProfessional">Business Professional</option>
@@ -101,179 +145,157 @@
             <option value="workingProfessional">Working Professional</option>
           </select>
         </div>
-        
+
         <!-- Entrepreneur Fields -->
         <div id="entrepreneurFields" class="hidden">
-          <div class="form-group">
-            <label for="startupName">Startup Name</label>
-            <input type="text" id="startupName" name="startupName">
+          <div class="mb-3">
+            <label for="startupName" class="form-label">Startup Name</label>
+            <input type="text" id="startupName" name="startupName" class="form-control" />
           </div>
-          <div class="form-group">
-            <label for="startupIndustry">Industry</label>
-            <input type="text" id="startupIndustry" name="startupIndustry">
+          <div class="mb-3">
+            <label for="startupIndustry" class="form-label">Industry</label>
+            <input type="text" id="startupIndustry" name="startupIndustry" class="form-control" />
           </div>
-          <div class="form-group">
-            <label for="startupWebsite">Website (if any)</label>
-            <input type="url" id="startupWebsite" name="startupWebsite">
+          <div class="mb-3">
+            <label for="startupWebsite" class="form-label">Website (if any)</label>
+            <input type="url" id="startupWebsite" name="startupWebsite" class="form-control" />
           </div>
         </div>
-        
+
         <!-- Business Professional Fields -->
         <div id="businessProfessionalFields" class="hidden">
-          <div class="form-group">
-            <label for="businessName">Business Name</label>
-            <input type="text" id="businessName" name="businessName">
+          <div class="mb-3">
+            <label for="businessName" class="form-label">Business Name</label>
+            <input type="text" id="businessName" name="businessName" class="form-control" />
           </div>
-          <div class="form-group">
-            <label for="businessType">Type of Business</label>
-            <input type="text" id="businessType" name="businessType">
+          <div class="mb-3">
+            <label for="businessType" class="form-label">Type of Business</label>
+            <input type="text" id="businessType" name="businessType" class="form-control" />
           </div>
-          <div class="form-group">
-            <label for="businessWebsite">Website (if any)</label>
-            <input type="url" id="businessWebsite" name="businessWebsite">
+          <div class="mb-3">
+            <label for="businessWebsite" class="form-label">Website (if any)</label>
+            <input type="url" id="businessWebsite" name="businessWebsite" class="form-control" />
           </div>
         </div>
-        
+
         <!-- Student Fields -->
         <div id="studentFields" class="hidden">
-          <div class="form-group">
-            <label for="collegeName">College Name</label>
-            <input type="text" id="collegeName" name="collegeName">
+          <div class="mb-3">
+            <label for="collegeName" class="form-label">College Name</label>
+            <input type="text" id="collegeName" name="collegeName" class="form-control" />
           </div>
-          <div class="form-group">
-            <label for="courseYear">Course &amp; Year</label>
-            <input type="text" id="courseYear" name="courseYear">
+          <div class="mb-3">
+            <label for="courseYear" class="form-label">Course &amp; Year</label>
+            <input type="text" id="courseYear" name="courseYear" class="form-control" />
           </div>
         </div>
-        
+
         <!-- Working Professional Fields -->
         <div id="workingProfessionalFields" class="hidden">
-          <div class="form-group">
-            <label for="companyName">Company Name</label>
-            <input type="text" id="companyName" name="companyName">
+          <div class="mb-3">
+            <label for="companyName" class="form-label">Company Name</label>
+            <input type="text" id="companyName" name="companyName" class="form-control" />
           </div>
-          <div class="form-group">
-            <label for="jobTitle">Job Title</label>
-            <input type="text" id="jobTitle" name="jobTitle">
+          <div class="mb-3">
+            <label for="jobTitle" class="form-label">Job Title</label>
+            <input type="text" id="jobTitle" name="jobTitle" class="form-control" />
           </div>
         </div>
       </fieldset>
-      
+
       <!-- 3. Reason for Attending -->
-      <fieldset>
-        <legend>Reason for Attending</legend>
-        <div class="form-group">
-          <label for="interestReason">Why are you interested in CXO Connect?</label>
-          <textarea id="interestReason" name="interestReason" rows="3" required></textarea>
+      <fieldset class="border p-3 mb-4 rounded">
+        <legend class="w-auto px-2">Reason for Attending</legend>
+        <div class="mb-3">
+          <label for="interestReason" class="form-label">Why are you interested in CXO Connect?</label>
+          <textarea id="interestReason" name="interestReason" rows="3" class="form-control" required></textarea>
         </div>
-        <div class="form-group">
-          <label>Areas of Interest (Select all that apply):</label>
-          <div class="checkbox-group">
-            <div>
-              <label>
-                <input type="checkbox" name="interests" value="Networking">
-                Networking
-              </label>
-            </div>
-            <div>
-              <label>
-                <input type="checkbox" name="interests" value="Funding &amp; Investment">
-                Funding &amp; Investment
-              </label>
-            </div>
-            <div>
-              <label>
-                <input type="checkbox" name="interests" value="Business Networking">
-                Business Networking
-              </label>
-            </div>
-            <div>
-              <label>
-                <input type="checkbox" name="interests" value="Growth Strategies">
-                Growth Strategies
-              </label>
-            </div>
-            <div>
-              <label>
-                <input type="checkbox" name="interests" value="Tech &amp; Innovation">
-                Tech &amp; Innovation
-              </label>
-            </div>
-            <div>
-              <label>
-                <input type="checkbox" name="interests" value="Hiring &amp; Talent Acquisition">
-                Hiring &amp; Talent Acquisition
-              </label>
-            </div>
-            <div>
-              <label>
-                <input type="checkbox" name="interests" value="Other" id="otherInterestCheckbox">
-                Other (Specify)
-              </label>
-            </div>
+        <div class="mb-3">
+          <label class="form-label">Areas of Interest (Select all that apply):</label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="interests" value="Networking" id="interestNetworking" />
+            <label class="form-check-label" for="interestNetworking">Networking</label>
           </div>
-          
-          <div class="form-group hidden" id="otherInterestField">
-            <input type="text" id="otherInterest" name="otherInterest" placeholder="Please specify other interests">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="interests" value="Funding & Investment" id="interestFunding" />
+            <label class="form-check-label" for="interestFunding">Funding & Investment</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="interests" value="Business Networking" id="interestBusiness" />
+            <label class="form-check-label" for="interestBusiness">Business Networking</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="interests" value="Growth Strategies" id="interestGrowth" />
+            <label class="form-check-label" for="interestGrowth">Growth Strategies</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="interests" value="Tech & Innovation" id="interestTech" />
+            <label class="form-check-label" for="interestTech">Tech & Innovation</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="interests" value="Hiring & Talent Acquisition" id="interestHiring" />
+            <label class="form-check-label" for="interestHiring">Hiring & Talent Acquisition</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="interests" value="Other" id="otherInterestCheckbox" />
+            <label class="form-check-label" for="otherInterestCheckbox">Other (Specify)</label>
+          </div>
+          <div class="mt-2 hidden" id="otherInterestField">
+            <input type="text" id="otherInterest" name="otherInterest" class="form-control" placeholder="Please specify other interests" />
           </div>
         </div>
       </fieldset>
-      
+
       <!-- 4. Contribution to the Event -->
-      <fieldset>
-        <legend>Contribution to the Event</legend>
-        <div class="form-group">
-          <label>Would you like to be a speaker, panelist, or share your startup journey?</label>
-          <div class="radio-group">
-            <label>
-              <input type="radio" name="contribution" value="yes" required>
-              Yes
-            </label>
-            <label>
-              <input type="radio" name="contribution" value="no" required>
-              No
-            </label>
+      <fieldset class="border p-3 mb-4 rounded">
+        <legend class="w-auto px-2">Contribution to the Event</legend>
+        <div class="mb-3">
+          <label class="form-label">Would you like to be a speaker, panelist, or share your startup journey?</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="contribution" value="yes" id="contributionYes" required />
+            <label class="form-check-label" for="contributionYes">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="contribution" value="no" id="contributionNo" required />
+            <label class="form-check-label" for="contributionNo">No</label>
           </div>
         </div>
-        <div class="form-group hidden" id="contributionDetails">
-          <label for="contributionTopic">If yes, briefly describe your topic:</label>
-          <textarea id="contributionTopic" name="contributionTopic" rows="3"></textarea>
+        <div class="mb-3 hidden" id="contributionDetails">
+          <label for="contributionTopic" class="form-label">If yes, briefly describe your topic:</label>
+          <textarea id="contributionTopic" name="contributionTopic" rows="3" class="form-control"></textarea>
         </div>
-        <div class="form-group hidden" id="mentorField">
-          <label>Would you like to mentor a startup?</label>
-          <div class="radio-group">
-            <label>
-              <input type="radio" name="mentor" value="yes">
-              Yes
-            </label>
-            <label>
-              <input type="radio" name="mentor" value="no">
-              No
-            </label>
+        <div class="mb-3 hidden" id="mentorField">
+          <label class="form-label">Would you like to mentor a startup?</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="mentor" value="yes" id="mentorYes" />
+            <label class="form-check-label" for="mentorYes">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="mentor" value="no" id="mentorNo" />
+            <label class="form-check-label" for="mentorNo">No</label>
           </div>
         </div>
       </fieldset>
-      
+
       <!-- 5. Pass Details & Preferences -->
-      <fieldset>
-        <legend>Pass Details &amp; Preferences</legend>
-        <div class="form-group">
-          <label>Preferred Mode of Attendance:</label>
-          <div class="radio-group">
-            <label>
-              <input type="radio" name="attendanceMode" value="inPerson" checked>
-              In-Person
-            </label>
+      <fieldset class="border p-3 mb-4 rounded">
+        <legend class="w-auto px-2">Pass Details &amp; Preferences</legend>
+        <div class="mb-3">
+          <label class="form-label">Preferred Mode of Attendance:</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="attendanceMode" value="inPerson" id="attendanceInPerson" checked />
+            <label class="form-check-label" for="attendanceInPerson">In-Person</label>
+            
           </div>
         </div>
       </fieldset>
-      
+
       <!-- 6. Payment & Confirmation -->
-      <fieldset>
-        <legend>Payment &amp; Confirmation</legend>
-        <div class="form-group">
-          <label for="paymentMethod">Payment Method</label>
-          <select id="paymentMethod" name="paymentMethod" required>
+      <!-- <fieldset class="border p-3 mb-4 rounded">
+        <legend class="w-auto px-2">Payment &amp; Confirmation</legend>
+        <div class="mb-3">
+          <label for="paymentMethod" class="form-label">Payment Method</label>
+          <select id="paymentMethod" name="paymentMethod" class="form-select" required>
             <option value="">-- Select Payment Method --</option>
             <option value="upi">UPI</option>
             <option value="netBanking">Net Banking</option>
@@ -281,48 +303,119 @@
             <option value="payAtVenue">Pay at Venue</option>
           </select>
         </div>
-        <div class="form-group">
-          <label for="paymentReceipt">Upload Payment Receipt (if applicable)</label>
-          <input type="file" id="paymentReceipt" name="paymentReceipt" accept="image/*,application/pdf">
+        <div class="mb-3">
+          <label for="paymentReceipt" class="form-label">Upload Payment Receipt (if applicable)</label>
+          <input type="file" id="paymentReceipt" name="paymentReceipt" class="form-control" accept="image/*,application/pdf" />
         </div>
-      </fieldset>
-      
-      <button type="submit">Submit</button>
+      </fieldset> -->
+
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Toggle Professional/Academic fields based on selection
+  <footer class="bg-gray-900 text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Footer Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            
+            <!-- Logo and Description -->
+            <div> 
+                <!-- <img src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png" alt="RURA Foundation"
+                    class="h-8 mb-6"> -->
+                <h1 class=" font-bold">RURA Foundation</h1>
+                <p class="text-gray-400">Transforming lives through innovation and sustainability</p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="index1.html" class="text-gray-400 hover:text-white">Home</a></li>
+                    <li><a href="about-us.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                    <li><a href="cxo.html" class="text-gray-400 hover:text-white">Cxo Connect</a></li>
+                    <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                <ul class="space-y-2">
+                    <li class="text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i>123 Impact Street, City</li>
+                    <li class="text-gray-400"><i class="fas fa-phone mr-2"></i>+91 9492859634</li>
+                    <li class="text-gray-400"><i class="fas fa-envelope mr-2"></i>info@rurafoundation.org</li>
+                </ul>
+            </div>
+
+            <!-- Social Media Links -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Section -->
+        <div class="border-t border-gray-800 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2024 RURA Foundation. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0"> 
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Our custom script using ES modules -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+
+  <script >
+const {createClient}=supabase
+// Replace these with your actual Supabase details
+const supabaseUrl = 'https://owzaetzxjsspqkwcucqg.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im93emFldHp4anNzcHFrd2N1Y3FnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA0MTc2MjcsImV4cCI6MjA1NTk5MzYyN30.fK9JpZ5XaBh2d0YZGgkcY4MJhZn9RQCujTp4G0J2hW8';
+const supabaseClient = createClient(supabaseUrl, supabaseKey);
+
+
+
+    // Wait for the DOM to be ready
+    document.addEventListener('DOMContentLoaded', () => {
+      // Toggle form fields based on professional type
       const professionalTypeSelect = document.getElementById('professionalType');
       const entrepreneurFields = document.getElementById('entrepreneurFields');
       const businessProfessionalFields = document.getElementById('businessProfessionalFields');
       const studentFields = document.getElementById('studentFields');
       const workingProfessionalFields = document.getElementById('workingProfessionalFields');
       const mentorField = document.getElementById('mentorField');
-      
+
       professionalTypeSelect.addEventListener('change', function() {
-        const value = this.value;
-        // Hide all optional sections first
         entrepreneurFields.classList.add('hidden');
         businessProfessionalFields.classList.add('hidden');
         studentFields.classList.add('hidden');
         workingProfessionalFields.classList.add('hidden');
         mentorField.classList.add('hidden');
-        
-        if (value === 'entrepreneur') {
+
+        if (this.value === 'entrepreneur') {
           entrepreneurFields.classList.remove('hidden');
           mentorField.classList.remove('hidden');
-        } else if (value === 'businessProfessional') {
+        } else if (this.value === 'businessProfessional') {
           businessProfessionalFields.classList.remove('hidden');
-        } else if (value === 'student') {
+        } else if (this.value === 'student') {
           studentFields.classList.remove('hidden');
-        } else if (value === 'workingProfessional') {
+        } else if (this.value === 'workingProfessional') {
           workingProfessionalFields.classList.remove('hidden');
         }
       });
-      
-      // Toggle "Other" interest field based on checkbox
+
+      // Toggle "Other" interest field
       const otherInterestCheckbox = document.getElementById('otherInterestCheckbox');
       const otherInterestField = document.getElementById('otherInterestField');
       otherInterestCheckbox.addEventListener('change', function() {
@@ -332,11 +425,11 @@
           otherInterestField.classList.add('hidden');
         }
       });
-      
-      // Toggle contribution topic field based on radio selection
+
+      // Toggle contribution topic field
       const contributionRadios = document.getElementsByName('contribution');
       const contributionDetails = document.getElementById('contributionDetails');
-      Array.from(contributionRadios).forEach(function(radio) {
+      Array.from(contributionRadios).forEach(radio => {
         radio.addEventListener('change', function() {
           if (this.value === 'yes') {
             contributionDetails.classList.remove('hidden');
@@ -345,24 +438,70 @@
           }
         });
       });
-      
-      // Handle form submission (for demo purposes)
+
+      // Handle form submission
       const form = document.getElementById('registrationForm');
-      form.addEventListener('submit', function(e) {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        alert('Form submitted successfully!');
-        // Add your form processing logic here
+
+        const formData = new FormData(form);
+        const data = {
+          full_name: formData.get('fullName'),
+          contact_number: formData.get('contactNumber'),
+          email_address: formData.get('emailAddress'),
+          linkedin_profile: formData.get('linkedinProfile'),
+          blood_group: formData.get('bloodGroup'),
+          professional_type: formData.get('professionalType'),
+          startup_name: formData.get('startupName'),
+          startup_industry: formData.get('startupIndustry'),
+          startup_website: formData.get('startupWebsite'),
+          business_name: formData.get('businessName'),
+          business_type: formData.get('businessType'),
+          business_website: formData.get('businessWebsite'),
+          college_name: formData.get('collegeName'),
+          course_year: formData.get('courseYear'),
+          company_name: formData.get('companyName'),
+          job_title: formData.get('jobTitle'),
+          interest_reason: formData.get('interestReason'),
+          interests: formData.getAll('interests').join(', '),
+          other_interest: formData.get('otherInterest'),
+          contribution: formData.get('contribution'),
+          contribution_topic: formData.get('contributionTopic'),
+          mentor: formData.get('mentor'),
+          attendance_mode: formData.get('attendanceMode'),
+          // payment_method: formData.get('paymentMethod')
+        };
+
+        try {
+          const { data: insertedData, error } = await supabaseClient
+            .from('cxo_registrations')
+            .insert([data]);
+
+          if (error) {
+            console.error('Error inserting data:', error);
+            alert('There was an error submitting your registration.');
+          } else {
+            console.log('Inserted data:', insertedData);
+            form.reset();
+            window.location.href = "thanks.html";
+
+          }
+        } catch (err) {
+          console.error('Unexpected error:', err);
+          alert('An unexpected error occurred.');
+        }
       });
     });
   </script>
+   <script>
+    // Select the menu button and mobile menu elements
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Add a click event listener to toggle the mobile menu visibility
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
 </body>
 </html>
-// Replace these with your actual Supabase details
-const supabaseUrl = 'https://owzaetzxjsspqkwcucqg.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im93emFldHp4anNzcHFrd2N1Y3FnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA0MTc2MjcsImV4cCI6MjA1NTk5MzYyN30.fK9JpZ5XaBh2d0YZGgkcY4MJhZn9RQCujTp4G0J2hW8';
-const supabaseClient = createClient(supabaseUrl, supabaseKey);
-// Replace these with your actual Supabase details
-const supabaseUrl = 'https://owzaetzxjsspqkwcucqg.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im93emFldHp4anNzcHFrd2N1Y3FnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA0MTc2MjcsImV4cCI6MjA1NTk5MzYyN30.fK9JpZ5XaBh2d0YZGgkcY4MJhZn9RQCujTp4G0J2hW8';
-const supabaseClient = createClient(supabaseUrl, supabaseKey);
-

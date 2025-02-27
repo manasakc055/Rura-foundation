@@ -33,9 +33,9 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('./assets/form-bg.jpg') no-repeat center center fixed;
+      /* background: url('./assets/form-bg.jpg') no-repeat center center fixed;
       background-size: cover;
-      filter: brightness(0.5);
+      filter: brightness(0.5); */
       z-index: -1;
     }
     /* Semi-transparent container for the form */
@@ -43,6 +43,10 @@
       background-color: rgba(255, 255, 255, 0.9);
       padding: 20px;
       border-radius: 8px;
+      width: 800px !important;
+
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
     }
     .hidden {
       display: none;
@@ -61,7 +65,7 @@
   </style>
 </head>
 <body>
-  <header class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+  <header class="fixed w-full z-50  shadow-[0_4px_6px_rgba(0,0,0,0.1)] bg-white/95 backdrop-blur-sm border-b border-gray-100">
     <nav class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <!-- Logo -->
@@ -78,7 +82,7 @@
                 <!-- <a href="initiatives" class="text-gray-700 hover:text-black">Initiatives</a> -->
                 <a href="cxo.html" class="text-gray-700 hover:text-black">Cxo connect</a>
                 <a href="contact.html" class="text-gray-700 hover:text-black">Contact</a>
-                <button class="!rounded-button rounded-md bg-black text-white px-6 py-2 hover:bg-black/90">Donate</button>
+                <!-- <button class="!rounded-button rounded-md bg-black text-white px-6 py-2 hover:bg-black/90">Donate</button> -->
             </div>
 
             <!-- Mobile Menu Button (Visible on smaller screens) -->
@@ -100,12 +104,12 @@
             <!-- <a href="initiatives" class="block text-gray-700 hover:text-black py-2">Initiatives</a> -->
             <a href="cxo.html" class="block text-gray-700 hover:text-black py-2">Cxo connect</a>
             <a href="contact.html" class="block text-gray-700 hover:text-black py-2">Contact</a>
-            <button class="!rounded-button rounded-md bg-black text-black text-white px-6 py-2 w-full mt-2 hover:bg-black text-black/90">Donate</button>
+            <!-- <button class="!rounded-button rounded-md bg-black text-black text-white px-6 py-2 w-full mt-2 hover:bg-black text-black/90">Donate</button> -->
         </div>
     </div>
 </header>
   <div class="container my-5">
-    <h2 class="text-center mb-4">CXO Connect Pass Registration</h2>
+    <legend class="text-center mb-4">CXO Connect Pass Registration</legend>
     <form id="registrationForm">
       <!-- 1. Personal Details -->
       <fieldset class="border p-3 mb-4 rounded">
@@ -370,6 +374,171 @@
         </div>
     </div>
 </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('registrationForm');
+  
+      form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+  
+          // Get form elements
+          const fullName = document.getElementById('fullName');
+          const contactNumber = document.getElementById('contactNumber');
+          const emailAddress = document.getElementById('emailAddress');
+          const linkedinProfile = document.getElementById('linkedinProfile');
+          const professionalType = document.getElementById('professionalType');
+          const interestReason = document.getElementById('interestReason');
+          const contributionRadios = document.querySelectorAll('input[name="contribution"]');
+          
+          // Clear previous error messages
+          document.querySelectorAll('.error').forEach(el => el.remove());
+  
+          let isValid = true;
+  
+          // Helper function to show errors
+          function showError(input, message) {
+              const errorDiv = document.createElement('div');
+              errorDiv.classList.add('error', 'text-danger', 'small');
+              errorDiv.innerText = message;
+              input.classList.add('is-invalid');
+              input.parentElement.appendChild(errorDiv);
+              isValid = false;
+          }
+  
+          // Remove error on input change
+          function removeError(input) {
+              input.classList.remove('is-invalid');
+              const errorDiv = input.parentElement.querySelector('.error');
+              if (errorDiv) errorDiv.remove();
+          }
+  
+          // Validate Full Name
+          if (fullName.value.trim() === '') {
+              showError(fullName, 'Full Name is required.');
+          } else {
+              removeError(fullName);
+          }
+  
+          // Validate Contact Number (10-digit Indian format)
+          const phonePattern = /^[6-9]\d{9}$/;
+          if (!phonePattern.test(contactNumber.value.trim())) {
+              showError(contactNumber, 'Enter a valid 10-digit phone number.');
+          } else {
+              removeError(contactNumber);
+          }
+  
+          // Validate Email
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(emailAddress.value.trim())) {
+              showError(emailAddress, 'Enter a valid email address.');
+          } else {
+              removeError(emailAddress);
+          }
+  
+          // Validate LinkedIn Profile (Optional but should be valid if provided)
+          const linkedinPattern = /^(https?:\/\/)?(www\.)?linkedin\.com\/.*$/;
+          if (linkedinProfile.value.trim() !== '' && !linkedinPattern.test(linkedinProfile.value.trim())) {
+              showError(linkedinProfile, 'Enter a valid LinkedIn profile URL.');
+          } else {
+              removeError(linkedinProfile);
+          }
+  
+          // Validate Professional Type
+          if (professionalType.value === '') {
+              showError(professionalType, 'Please select your professional type.');
+          } else {
+              removeError(professionalType);
+          }
+  
+          // Validate Entrepreneur/Business/Student/Professional Fields
+          if (professionalType.value === 'entrepreneur') {
+              const startupName = document.getElementById('startupName');
+              if (startupName.value.trim() === '') {
+                  showError(startupName, 'Startup name is required.');
+              } else {
+                  removeError(startupName);
+              }
+          } else if (professionalType.value === 'businessProfessional') {
+              const businessName = document.getElementById('businessName');
+              if (businessName.value.trim() === '') {
+                  showError(businessName, 'Business name is required.');
+              } else {
+                  removeError(businessName);
+              }
+          } else if (professionalType.value === 'student') {
+              const collegeName = document.getElementById('collegeName');
+              if (collegeName.value.trim() === '') {
+                  showError(collegeName, 'College name is required.');
+              } else {
+                  removeError(collegeName);
+              }
+          } else if (professionalType.value === 'workingProfessional') {
+              const companyName = document.getElementById('companyName');
+              if (companyName.value.trim() === '') {
+                  showError(companyName, 'Company name is required.');
+              } else {
+                  removeError(companyName);
+              }
+          }
+  
+          // Validate Interest Reason
+          if (interestReason.value.trim() === '') {
+              showError(interestReason, 'Please specify your reason for attending.');
+          } else {
+              removeError(interestReason);
+          }
+  
+          // Validate Checkbox Selection (At least one interest)
+          // const interestCheckboxes = document.querySelectorAll('input[name="interests"]:checked');
+          //  if (interestCheckboxes.length === 0) {
+          //   showError(document.querySelector('input[name="interests"]'), 'Select at least one area of interest.');
+          //  }
+  
+          // Validate Contribution Selection (At least one radio must be selected)
+          let contributionSelected = false;
+          contributionRadios.forEach(radio => {
+              if (radio.checked) contributionSelected = true;
+          });
+          if (!contributionSelected) {
+              showError(contributionRadios[0], 'Please choose whether you want to contribute.');
+          }
+  
+          // If form is valid, proceed with submission
+          if (isValid) {
+              const formData = new FormData(form);
+              const data = {
+                  full_name: formData.get('fullName'),
+                  contact_number: formData.get('contactNumber'),
+                  email_address: formData.get('emailAddress'),
+                  linkedin_profile: formData.get('linkedinProfile'),
+                  professional_type: formData.get('professionalType'),
+                  interest_reason: formData.get('interestReason'),
+                  contribution: formData.get('contribution'),
+                  attendance_mode: formData.get('attendanceMode'),
+              };
+  
+              try {
+                  const { data: insertedData, error } = await supabaseClient
+                      .from('cxo_registrations')
+                      .insert([data]);
+  
+                  if (error) {
+                      console.error('Error inserting data:', error);
+                      alert('There was an error submitting your registration.');
+                  } else {
+                      console.log('Inserted data:', insertedData);
+                      form.reset();
+                      window.location.href = "thanks.html";
+                  }
+              } catch (err) {
+                  console.error('Unexpected error:', err);
+                  alert('An unexpected error occurred.');
+              }
+          }
+      });
+  });
+  </script>
+  
 
   <!-- Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
