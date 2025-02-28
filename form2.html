@@ -35,7 +35,9 @@
       /* background: url('./assets/form-bg.jpg') no-repeat center center fixed;
       background-size: cover;
       filter: brightness(0.5); */
-      background: linear-gradient(to right, #77818b, #a2abb4);
+      background-color: rgba(255, 255, 255, 0.9);
+
+      /* background: linear-gradient(to right, #77818b, #a2abb4); */
       z-index: -1;
     }
 
@@ -43,10 +45,9 @@
     .container {
       background-color: rgba(255, 255, 255, 0.9);
       padding: 20px;
-      border-radius: 8px;
-      width: 800px !important;
+      /* border-radius: 8px;
 
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 
     }
 
@@ -91,10 +92,40 @@
       outline: none;
       /* Remove default outline */
     }
-    #registrationForm button[type="submit"] {
-  width: 100%;
-}
 
+    #registrationForm button[type="submit"] {
+      width: 100%;
+    }
+
+    .form-container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        fieldset {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        legend {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 576px) {
+            .form-container {
+                padding: 15px;
+            }
+        }
   </style>
 </head>
 
@@ -145,203 +176,207 @@
     </div>
   </header>
   <div class="container my-5">
-    <legend class="text-center mb-4">CXO Connect Pass Registration</legend>
-    <form id="registrationForm">
-      <!-- 1. Personal Details -->
-      <fieldset class="border p-3 mb-4 rounded">
-        <legend class="w-auto px-2">Personal Details</legend>
-        <div class="mb-3">
-          <label for="fullName" class="form-label">Full Name</label>
-          <input type="text" id="fullName" name="fullName" class="form-control border-radius" required />
-        </div>
-        <div class="mb-3">
-          <label for="contactNumber" class="form-label">Contact Number</label>
-          <input type="tel" id="contactNumber" name="contactNumber" class="form-control" required />
-        </div>
-        <div class="mb-3">
-          <label for="emailAddress" class="form-label">Email Address</label>
-          <input type="email" id="emailAddress" name="emailAddress" class="form-control" required />
-        </div>
-        <div class="mb-3">
-          <label for="linkedinProfile" class="form-label">LinkedIn Profile (Optional)</label>
-          <input type="url" id="linkedinProfile" name="linkedinProfile" class="form-control" />
-        </div>
-        <div class="mb-3">
-          <label for="bloodGroup" class="form-label">Blood Group (Optional)</label>
-          <input type="text" id="bloodGroup" name="bloodGroup" class="form-control" />
-        </div>
-      </fieldset>
+    <div class="form-container">
 
-      <!-- 2. Professional/Academic Details -->
-      <fieldset class="border p-3 mb-4  rounded">
-        <legend class="w-auto px-2">Professional/Academic Details</legend>
-        <div class="mb-3">
-          <label for="professionalType" class="form-label">Are you an Entrepreneur, Business Professional, Student, or
-            Working Professional?</label>
-          <select id="professionalType" name="professionalType" class="form-select " required>
-            <option value="">-- Select --</option>
-            <option value="entrepreneur">Entrepreneur</option>
-            <option value="businessProfessional">Business Professional</option>
-            <option value="student">Student</option>
-            <option value="workingProfessional">Working Professional</option>
-          </select>
-        </div>
-
-        <!-- Entrepreneur Fields -->
-        <div id="entrepreneurFields" class="hidden">
+      <legend class="text-center mb-4">CXO Connect Pass Registration</legend>
+      <form id="registrationForm">
+        <!-- 1. Personal Details -->
+        <fieldset class="border p-3 mb-4 rounded">
+          <legend class="w-auto px-2">Personal Details</legend>
           <div class="mb-3">
-            <label for="startupName" class="form-label">Startup Name</label>
-            <input type="text" id="startupName" name="startupName" class="form-control" />
+            <label for="fullName" class="form-label">Full Name</label>
+            <input type="text" id="fullName" name="fullName" class="form-control border-radius" required />
           </div>
           <div class="mb-3">
-            <label for="startupIndustry" class="form-label">Industry</label>
-            <input type="text" id="startupIndustry" name="startupIndustry" class="form-control" />
+            <label for="contactNumber" class="form-label">Contact Number</label>
+            <input type="tel" id="contactNumber" name="contactNumber" class="form-control" required />
           </div>
           <div class="mb-3">
-            <label for="startupWebsite" class="form-label">Website (if any)</label>
-            <input type="url" id="startupWebsite" name="startupWebsite" class="form-control" />
-          </div>
-        </div>
-
-        <!-- Business Professional Fields -->
-        <div id="businessProfessionalFields" class="hidden">
-          <div class="mb-3">
-            <label for="businessName" class="form-label">Business Name</label>
-            <input type="text" id="businessName" name="businessName" class="form-control" />
+            <label for="emailAddress" class="form-label">Email Address</label>
+            <input type="email" id="emailAddress" name="emailAddress" class="form-control" required />
           </div>
           <div class="mb-3">
-            <label for="businessType" class="form-label">Type of Business</label>
-            <input type="text" id="businessType" name="businessType" class="form-control" />
+            <label for="linkedinProfile" class="form-label">LinkedIn Profile (Optional)</label>
+            <input type="url" id="linkedinProfile" name="linkedinProfile" class="form-control" />
           </div>
           <div class="mb-3">
-            <label for="businessWebsite" class="form-label">Website (if any)</label>
-            <input type="url" id="businessWebsite" name="businessWebsite" class="form-control" />
+            <label for="bloodGroup" class="form-label">Blood Group (Optional)</label>
+            <input type="text" id="bloodGroup" name="bloodGroup" class="form-control" />
           </div>
-        </div>
+        </fieldset>
 
-        <!-- Student Fields -->
-        <div id="studentFields" class="hidden">
+        <!-- 2. Professional/Academic Details -->
+        <fieldset class="border p-3 mb-4  rounded">
+          <legend class="w-auto px-2">Professional/Academic Details</legend>
           <div class="mb-3">
-            <label for="collegeName" class="form-label">College Name</label>
-            <input type="text" id="collegeName" name="collegeName" class="form-control" />
+            <label for="professionalType" class="form-label">Are you an Entrepreneur, Business Professional, Student, or
+              Working Professional?</label>
+            <select id="professionalType" name="professionalType" class="form-select " required>
+              <option value="">-- Select --</option>
+              <option value="entrepreneur">Entrepreneur</option>
+              <option value="businessProfessional">Business Professional</option>
+              <option value="student">Student</option>
+              <option value="workingProfessional">Working Professional</option>
+            </select>
+          </div>
+
+          <!-- Entrepreneur Fields -->
+          <div id="entrepreneurFields" class="hidden">
+            <div class="mb-3">
+              <label for="startupName" class="form-label">Startup Name</label>
+              <input type="text" id="startupName" name="startupName" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="startupIndustry" class="form-label">Industry</label>
+              <input type="text" id="startupIndustry" name="startupIndustry" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="startupWebsite" class="form-label">Website (if any)</label>
+              <input type="url" id="startupWebsite" name="startupWebsite" class="form-control" />
+            </div>
+          </div>
+
+          <!-- Business Professional Fields -->
+          <div id="businessProfessionalFields" class="hidden">
+            <div class="mb-3">
+              <label for="businessName" class="form-label">Business Name</label>
+              <input type="text" id="businessName" name="businessName" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="businessType" class="form-label">Type of Business</label>
+              <input type="text" id="businessType" name="businessType" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="businessWebsite" class="form-label">Website (if any)</label>
+              <input type="url" id="businessWebsite" name="businessWebsite" class="form-control" />
+            </div>
+          </div>
+
+          <!-- Student Fields -->
+          <div id="studentFields" class="hidden">
+            <div class="mb-3">
+              <label for="collegeName" class="form-label">College Name</label>
+              <input type="text" id="collegeName" name="collegeName" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="courseYear" class="form-label">Course &amp; Year</label>
+              <input type="text" id="courseYear" name="courseYear" class="form-control" />
+            </div>
+          </div>
+
+          <!-- Working Professional Fields -->
+          <div id="workingProfessionalFields" class="hidden">
+            <div class="mb-3">
+              <label for="companyName" class="form-label">Company Name</label>
+              <input type="text" id="companyName" name="companyName" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="jobTitle" class="form-label">Job Title</label>
+              <input type="text" id="jobTitle" name="jobTitle" class="form-control" />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- 3. Reason for Attending -->
+        <fieldset class="border p-3 mb-4 rounded">
+          <legend class="w-auto px-2">Reason for Attending</legend>
+          <div class="mb-3">
+            <label for="interestReason" class="form-label">Why are you interested in CXO Connect?</label>
+            <textarea id="interestReason" name="interestReason" rows="3" class="form-control" required></textarea>
           </div>
           <div class="mb-3">
-            <label for="courseYear" class="form-label">Course &amp; Year</label>
-            <input type="text" id="courseYear" name="courseYear" class="form-control" />
+            <label class="form-label">Areas of Interest (Select all that apply):</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="interests" value="Networking"
+                id="interestNetworking" />
+              <label class="form-check-label" for="interestNetworking">Networking</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="interests" value="Funding & Investment"
+                id="interestFunding" />
+              <label class="form-check-label" for="interestFunding">Funding & Investment</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="interests" value="Business Networking"
+                id="interestBusiness" />
+              <label class="form-check-label" for="interestBusiness">Business Networking</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="interests" value="Growth Strategies"
+                id="interestGrowth" />
+              <label class="form-check-label" for="interestGrowth">Growth Strategies</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="interests" value="Tech & Innovation"
+                id="interestTech" />
+              <label class="form-check-label" for="interestTech">Tech & Innovation</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="interests" value="Hiring & Talent Acquisition"
+                id="interestHiring" />
+              <label class="form-check-label" for="interestHiring">Hiring & Talent Acquisition</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="interests" value="Other"
+                id="otherInterestCheckbox" />
+              <label class="form-check-label" for="otherInterestCheckbox">Other (Specify)</label>
+            </div>
+            <div class="mt-2 hidden" id="otherInterestField">
+              <input type="text" id="otherInterest" name="otherInterest" class="form-control"
+                placeholder="Please specify other interests" />
+            </div>
           </div>
-        </div>
+        </fieldset>
 
-        <!-- Working Professional Fields -->
-        <div id="workingProfessionalFields" class="hidden">
+        <!-- 4. Contribution to the Event -->
+        <fieldset class="border p-3 mb-4 rounded">
+          <legend class="w-auto px-2">Contribution to the Event</legend>
           <div class="mb-3">
-            <label for="companyName" class="form-label">Company Name</label>
-            <input type="text" id="companyName" name="companyName" class="form-control" />
+            <label class="form-label">Would you like to be a speaker, panelist, or share your startup journey?</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="contribution" value="yes" id="contributionYes"
+                required />
+              <label class="form-check-label" for="contributionYes">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="contribution" value="no" id="contributionNo"
+                required />
+              <label class="form-check-label" for="contributionNo">No</label>
+            </div>
           </div>
+          <div class="mb-3 hidden" id="contributionDetails">
+            <label for="contributionTopic" class="form-label">If yes, briefly describe your topic:</label>
+            <textarea id="contributionTopic" name="contributionTopic" rows="3" class="form-control"></textarea>
+          </div>
+          <div class="mb-3 hidden" id="mentorField">
+            <label class="form-label">Would you like to mentor a startup?</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="mentor" value="yes" id="mentorYes" />
+              <label class="form-check-label" for="mentorYes">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="mentor" value="no" id="mentorNo" />
+              <label class="form-check-label" for="mentorNo">No</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- 5. Pass Details & Preferences -->
+        <fieldset class="border p-3 mb-4 rounded">
+          <legend class="w-auto px-2">Pass Details &amp; Preferences</legend>
           <div class="mb-3">
-            <label for="jobTitle" class="form-label">Job Title</label>
-            <input type="text" id="jobTitle" name="jobTitle" class="form-control" />
-          </div>
-        </div>
-      </fieldset>
+            <label class="form-label">Preferred Mode of Attendance:</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="attendanceMode" value="inPerson"
+                id="attendanceInPerson" checked />
+              <label class="form-check-label" for="attendanceInPerson">In-Person</label>
 
-      <!-- 3. Reason for Attending -->
-      <fieldset class="border p-3 mb-4 rounded">
-        <legend class="w-auto px-2">Reason for Attending</legend>
-        <div class="mb-3">
-          <label for="interestReason" class="form-label">Why are you interested in CXO Connect?</label>
-          <textarea id="interestReason" name="interestReason" rows="3" class="form-control" required></textarea>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Areas of Interest (Select all that apply):</label>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="interests" value="Networking"
-              id="interestNetworking" />
-            <label class="form-check-label" for="interestNetworking">Networking</label>
+            </div>
           </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="interests" value="Funding & Investment"
-              id="interestFunding" />
-            <label class="form-check-label" for="interestFunding">Funding & Investment</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="interests" value="Business Networking"
-              id="interestBusiness" />
-            <label class="form-check-label" for="interestBusiness">Business Networking</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="interests" value="Growth Strategies"
-              id="interestGrowth" />
-            <label class="form-check-label" for="interestGrowth">Growth Strategies</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="interests" value="Tech & Innovation"
-              id="interestTech" />
-            <label class="form-check-label" for="interestTech">Tech & Innovation</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="interests" value="Hiring & Talent Acquisition"
-              id="interestHiring" />
-            <label class="form-check-label" for="interestHiring">Hiring & Talent Acquisition</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="interests" value="Other" id="otherInterestCheckbox" />
-            <label class="form-check-label" for="otherInterestCheckbox">Other (Specify)</label>
-          </div>
-          <div class="mt-2 hidden" id="otherInterestField">
-            <input type="text" id="otherInterest" name="otherInterest" class="form-control"
-              placeholder="Please specify other interests" />
-          </div>
-        </div>
-      </fieldset>
+        </fieldset>
 
-      <!-- 4. Contribution to the Event -->
-      <fieldset class="border p-3 mb-4 rounded">
-        <legend class="w-auto px-2">Contribution to the Event</legend>
-        <div class="mb-3">
-          <label class="form-label">Would you like to be a speaker, panelist, or share your startup journey?</label>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="contribution" value="yes" id="contributionYes"
-              required />
-            <label class="form-check-label" for="contributionYes">Yes</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="contribution" value="no" id="contributionNo" required />
-            <label class="form-check-label" for="contributionNo">No</label>
-          </div>
-        </div>
-        <div class="mb-3 hidden" id="contributionDetails">
-          <label for="contributionTopic" class="form-label">If yes, briefly describe your topic:</label>
-          <textarea id="contributionTopic" name="contributionTopic" rows="3" class="form-control"></textarea>
-        </div>
-        <div class="mb-3 hidden" id="mentorField">
-          <label class="form-label">Would you like to mentor a startup?</label>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="mentor" value="yes" id="mentorYes" />
-            <label class="form-check-label" for="mentorYes">Yes</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="mentor" value="no" id="mentorNo" />
-            <label class="form-check-label" for="mentorNo">No</label>
-          </div>
-        </div>
-      </fieldset>
-
-      <!-- 5. Pass Details & Preferences -->
-      <fieldset class="border p-3 mb-4 rounded">
-        <legend class="w-auto px-2">Pass Details &amp; Preferences</legend>
-        <div class="mb-3">
-          <label class="form-label">Preferred Mode of Attendance:</label>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="attendanceMode" value="inPerson" id="attendanceInPerson"
-              checked />
-            <label class="form-check-label" for="attendanceInPerson">In-Person</label>
-
-          </div>
-        </div>
-      </fieldset>
-
-      <!-- 6. Payment & Confirmation -->
-      <!-- <fieldset class="border p-3 mb-4 rounded">
+        <!-- 6. Payment & Confirmation -->
+        <!-- <fieldset class="border p-3 mb-4 rounded">
         <legend class="w-auto px-2">Payment &amp; Confirmation</legend>
         <div class="mb-3">
           <label for="paymentMethod" class="form-label">Payment Method</label>
@@ -359,9 +394,10 @@
         </div>
       </fieldset> -->
 
-      <button type="submit" class="btn btn-dark btn-lg  btn-block">Submit</button>
+        <button type="submit" class="btn btn-dark ">Submit</button>
 
-    </form>
+      </form>
+    </div>
   </div>
   <footer class="bg-gray-900 text-white pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
