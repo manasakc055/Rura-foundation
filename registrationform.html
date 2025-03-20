@@ -746,7 +746,7 @@
         try {
           // ✅ Step 1: Check if the email or contact number already exists
           const { data: existingUser, error: checkError } = await supabaseClient
-            .from("1")
+            .from("cxo_registrations1")
             .select("id")
             .or(`contact_number.eq.${contactNumber},email_address.eq.${emailAddress}`)
             .maybeSingle(); // Fetch only a single record if exists
@@ -776,7 +776,7 @@
           };
 
           const { data: insertedData, error } = await supabaseClient
-            .from('1')
+            .from('cxo_registrations1')
             .insert([data]);
 
           if (error) {
