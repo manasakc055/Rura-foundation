@@ -764,7 +764,7 @@
           }
 
           // ✅ Step 2: If no duplicate, proceed with form submission
-          const data = {
+          /*const data = {
             full_name: formData.get("fullName"),
             contact_number: contactNumber,
             email_address: emailAddress,
@@ -773,7 +773,7 @@
             interest_reason: formData.get("interestReason"),
             contribution: formData.get("contribution"),
             attendance_mode: formData.get("attendanceMode"),
-          };
+          };*/
 
           const { data: insertedData, error } = await supabaseClient
             .from('cxo_registrations1')
